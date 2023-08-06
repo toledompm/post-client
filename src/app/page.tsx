@@ -1,63 +1,39 @@
+import { PostInfo } from "@/common/interfaces";
+import { logger } from "@/common/logger";
+import { Banner } from "@/components/banner";
+import { EmptyBanner } from "@/components/empty";
+import { ErrorBanner } from "@/components/error";
+import { PostCard } from "@/components/postCard";
+import { getPostList } from "@/services/postService";
 
-type Post = {
-  id: number;
-  title: string;
-  description?: string;
-};
+export default async function Home() {
+  let postList: Array<PostInfo> = [];
+  let fetchError: boolean = false;
 
-export default function Home() {
-  const postsData: Post[] = Array.from({ length: 10 }, (_, index) => ({
-    id: index + 1,
-    title: `Post ${index + 1}`,
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
-  }));
+  try {
+    postList = await getPostList();
+  } catch (error) {
+    fetchError = true;
+    logger.error(error);
+  }
 
-  postsData[0].description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet."
+  const hasPosts = postList.length > 0;
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center py-4 sm:py-8 md:py-16 lg:py-20 px-4 sm:px-24 md:px-48 lg:px-72">
-      <div className="bg-gray-800 shadow-md rounded-lg w-full h-full flex flex-col items-center justify-center border-2 border-gray-100">
-        {postsData.map((post) => (
-          <PostCard key={post.id} post={post}/>
-        ))}
-      </div>
+    <main>
+      <Banner />
+      {fetchError && <ErrorBanner />}
+      {!fetchError && !hasPosts && <EmptyBanner message="No posts yet :)" />}
+      {!fetchError && hasPosts && (
+        <div className="m-auto sm:w-2/3 bg-zinc-700">
+          {postList.map((post, index) => (
+            <div key={index}>
+              <PostCard post={post} />
+              {index !== postList.length - 1 &&<div className="border-b border-zinc-800" />}
+            </div>
+          ))}
+        </div>
+      )}
     </main>
-  );
-}
-
-function Divider() {
-  return (
-    <div className="border-b border-gray-500 my-0 w-full" />
-  );
-}
-
-function PostCard({post}: {post: Post}) {
-  return (
-    <div className="block w-full h-full">
-      <div className="py-4 px-8">
-        <div className="text-xl font-semibold text-white mb-2">
-          <h3>{post.title}</h3>
-        </div>
-        <div className="text-white mb-4">
-          <p>{post.description}</p>
-        </div>
-        <div className="bg-gray-700 rounded-lg mb-2 pb-40 sm:pb-80 md:pb-120 lg:pb-160">
-          <div className="bg-white rounded-t-lg pb-6">
-          </div>
-        </div>
-        <div className="flex">
-          {['tag1', 'tag2', 'tag3'].map((tag) => (TagBubble({tag})))}
-        </div>
-      </div>
-      {Divider()}
-    </div>
-  );
-}
-
-function TagBubble({tag}: {tag: string}) {
-  return (
-    <div className="text-gray-600 mr-2 text-sm my-2">
-      #{tag}
-    </div>
   );
 }
