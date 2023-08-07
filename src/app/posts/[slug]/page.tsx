@@ -31,7 +31,9 @@ export default async function PostsPage({
     <main>
       <Banner backButtonEnabled={true} />
       {fetchError && <ErrorBanner />}
-      {!fetchError && !hasContent && <EmptyBanner message="No content yet :)" />}
+      {!fetchError && !hasContent && (
+        <EmptyBanner message="No content yet :)" />
+      )}
       {!fetchError && hasContent && (
         <div className="m-auto sm:w-2/3 bg-zinc-700">
           <div className="py-4 px-8">

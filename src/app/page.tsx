@@ -29,7 +29,9 @@ export default async function Home() {
           {postList.map((post, index) => (
             <div key={index}>
               <PostCard post={post} />
-              {index !== postList.length - 1 &&<div className="border-b border-zinc-800" />}
+              {index !== postList.length - 1 && (
+                <div className="border-b border-zinc-800" />
+              )}
             </div>
           ))}
         </div>

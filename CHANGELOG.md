@@ -12,8 +12,7 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### 0.1.1 (2023-08-06)
 
-
 ### Features
 
-* bootstrap blog ([178cdbe](https://github.com/toledompm/post-client/commit/178cdbe5b3b0a946bcdc2e1701a01ccff4603e69))
-* redesign feed ([92ec3c5](https://github.com/toledompm/post-client/commit/92ec3c51cba42408e43f11f7b7088eae14a84b62))
+- bootstrap blog ([178cdbe](https://github.com/toledompm/post-client/commit/178cdbe5b3b0a946bcdc2e1701a01ccff4603e69))
+- redesign feed ([92ec3c5](https://github.com/toledompm/post-client/commit/92ec3c51cba42408e43f11f7b7088eae14a84b62))

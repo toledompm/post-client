@@ -20,7 +20,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v2
         with:
-          node-version: '18.x'
+          node-version: "18.x"
 
       - name: Install standard-version
         run: npm install -g standard-version
@@ -41,7 +41,7 @@ jobs:
 
       - name: Run standard-version tag
         run: npx standard-version --skip.commit --skip.changelog --skip.bump
-      
+
       - name: Push tag
         uses: ad-m/github-push-action@master
         with:
