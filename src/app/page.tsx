@@ -4,7 +4,9 @@ import { Banner } from "@/components/banner";
 import { EmptyBanner } from "@/components/empty";
 import { ErrorBanner } from "@/components/error";
 import { PostCard } from "@/components/postCard";
-import { getPostList } from "@/services/postService";
+import { getPostList } from "@/utils/postService";
+
+export const revalidate = 0;
 
 export default async function Home() {
   let postList: Array<PostInfo> = [];
@@ -20,7 +22,7 @@ export default async function Home() {
   const hasPosts = postList.length > 0;
 
   return (
-    <main>
+    <main className='font-mono text-white'>
       <Banner />
       {fetchError && <ErrorBanner />}
       {!fetchError && !hasPosts && <EmptyBanner message="No posts yet :)" />}

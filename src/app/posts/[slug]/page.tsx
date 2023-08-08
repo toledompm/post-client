@@ -8,7 +8,7 @@ import { logger } from "@/common/logger";
 import { Banner } from "@/components/banner";
 import { EmptyBanner } from "@/components/empty";
 import { ErrorBanner } from "@/components/error";
-import { getPostData } from "@/services/postService";
+import { getPostData } from "@/utils/postService";
 
 export default async function PostsPage({
   params,
@@ -28,7 +28,7 @@ export default async function PostsPage({
   const hasContent = postContent.length > 0;
 
   return (
-    <main>
+    <main className='font-mono text-white'>
       <Banner backButtonEnabled={true} />
       {fetchError && <ErrorBanner />}
       {!fetchError && !hasContent && (
