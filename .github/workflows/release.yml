@@ -23,7 +23,7 @@ jobs:
           node-version: "18.x"
 
       - name: Install standard-version
-        run: npm install semantic-release @semantic-release/commit-analyzer @semantic-release/release-notes-generator @semantic-release/git @semantic-release/github -g
+        run: npm install semantic-release @semantic-release/commit-analyzer @semantic-release/release-notes-generator @semantic-release/github -g
 
       - name: Setup git config
         run: |
