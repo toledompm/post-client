@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.6](https://github.com/toledompm/post-client/compare/v0.1.5...v0.1.6) (2023-08-08)
+
+
+### Bug Fixes
+
+* revalidate post data ([3bbc801](https://github.com/toledompm/post-client/commit/3bbc8017de17e445070ef5c6ca540d2a0e507eeb))
+
 ### [0.1.5](https://github.com/toledompm/post-client/compare/v0.1.4...v0.1.5) (2023-08-06)
 
 ### [0.1.4](https://github.com/toledompm/post-client/compare/v0.1.3...v0.1.4) (2023-08-06)
