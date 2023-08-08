@@ -5,9 +5,8 @@ env:
   IMAGE_NAME: ${{ github.repository }}
 
 on:
-  push:
-    tags:
-      - "*"
+  release:
+    types: [published]
 
 jobs:
   build-and-push-image:
