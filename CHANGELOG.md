@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.7](https://github.com/toledompm/post-client/compare/v0.1.6...v0.1.7) (2023-08-08)
+
+
+### Bug Fixes
+
+* add next config to dockerfile ([d0ef7b1](https://github.com/toledompm/post-client/commit/d0ef7b12ffe348ce48b01e0cfc87cf1825f52c46))
+
 ### [0.1.6](https://github.com/toledompm/post-client/compare/v0.1.5...v0.1.6) (2023-08-08)
 
 ### Bug Fixes
