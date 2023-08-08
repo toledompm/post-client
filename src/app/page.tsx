@@ -22,7 +22,7 @@ export default async function Home() {
   const hasPosts = postList.length > 0;
 
   return (
-    <main className='font-mono text-white'>
+    <main className="font-mono text-white">
       <Banner />
       {fetchError && <ErrorBanner />}
       {!fetchError && !hasPosts && <EmptyBanner message="No posts yet :)" />}

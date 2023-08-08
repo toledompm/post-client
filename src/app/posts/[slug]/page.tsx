@@ -28,7 +28,7 @@ export default async function PostsPage({
   const hasContent = postContent.length > 0;
 
   return (
-    <main className='font-mono text-white'>
+    <main className="font-mono text-white">
       <Banner backButtonEnabled={true} />
       {fetchError && <ErrorBanner />}
       {!fetchError && !hasContent && (
