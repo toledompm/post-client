@@ -7,7 +7,6 @@ on:
 
 jobs:
   release:
-    environment: production
     runs-on: ubuntu-latest
 
     steps:
