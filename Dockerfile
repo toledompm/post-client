@@ -16,8 +16,6 @@ RUN npm run build
 
 FROM base AS app
 
-RUN npm install -g npm@9.8.1
-
 COPY --from=build /app/package*.json ./
 
 RUN npm install --omit=dev
