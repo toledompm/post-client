@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.8](https://github.com/toledompm/post-client/compare/v0.1.7...v0.1.8) (2023-08-08)
+
+
+### Bug Fixes
+
+* dockerfile stage name ([706f5ff](https://github.com/toledompm/post-client/commit/706f5ffb170135d66ddaee1681aea888bcc45e49))
+* remove duplicate docker layers ([1315d22](https://github.com/toledompm/post-client/commit/1315d220a903bfc42b4cb7687b7f31f88cd66823))
+
 ### [0.1.7](https://github.com/toledompm/post-client/compare/v0.1.6...v0.1.7) (2023-08-08)
 
 
