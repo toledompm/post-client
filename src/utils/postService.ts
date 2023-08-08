@@ -16,9 +16,9 @@ async function request<T>(url: string): Promise<T> {
 }
 
 export async function getPostList(): Promise<Array<PostInfo>> {
-  return request<Array<PostInfo>>(`${baseURL}/posts`);
+  return request<Array<PostInfo>>(`${baseURL}/api/posts`);
 }
 
 export async function getPostData(slug: string): Promise<Array<PostContent>> {
-  return request<Array<PostContent>>(`${baseURL}/posts/${slug}`);
+  return request<Array<PostContent>>(`${baseURL}/api/posts/${slug}`);
 }
