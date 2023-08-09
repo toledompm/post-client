@@ -10,6 +10,8 @@ import { EmptyBanner } from "@/components/empty";
 import { ErrorBanner } from "@/components/error";
 import { getPostData } from "@/utils/postService";
 
+export const revalidate = 0;
+
 export default async function PostsPage({
   params,
 }: {
