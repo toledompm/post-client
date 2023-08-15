@@ -18,7 +18,17 @@ export type PostContentParagraph = {
   paragraph: string;
 };
 
-export type PostContent = PostContentHeading | PostContentParagraph;
+export type PostContentImage = {
+  image: {
+    url: string;
+    caption: string;
+  };
+};
+
+export type PostContent =
+  | PostContentHeading
+  | PostContentParagraph
+  | PostContentImage;
 
 export function isPostContentHeading(
   content: PostContent,
@@ -33,6 +43,15 @@ export function isPostContentParagraph(
   content: PostContent,
 ): content is PostContentParagraph {
   if (Object.keys(content).includes("paragraph")) {
+    return true;
+  }
+  return false;
+}
+
+export function isPostContentImage(
+  content: PostContent,
+): content is PostContentImage {
+  if (Object.keys(content).includes("image")) {
     return true;
   }
   return false;
