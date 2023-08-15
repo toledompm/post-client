@@ -22,10 +22,13 @@ export type PostContentImage = {
   image: {
     url: string;
     caption: string;
-  }
-}
+  };
+};
 
-export type PostContent = PostContentHeading | PostContentParagraph | PostContentImage;
+export type PostContent =
+  | PostContentHeading
+  | PostContentParagraph
+  | PostContentImage;
 
 export function isPostContentHeading(
   content: PostContent,

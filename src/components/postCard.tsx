@@ -1,5 +1,5 @@
 import { PostInfo } from "@/common/interfaces";
-import { buildImageUri } from '@/utils/helpers';
+import { buildImageUri } from "@/utils/helpers";
 import Image from "next/image";
 import Link from "next/link";
 

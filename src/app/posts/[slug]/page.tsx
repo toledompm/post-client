@@ -11,7 +11,7 @@ import { logger } from "@/common/logger";
 import { Banner } from "@/components/banner";
 import { EmptyBanner } from "@/components/empty";
 import { ErrorBanner } from "@/components/error";
-import { buildImageUri } from '@/utils/helpers';
+import { buildImageUri } from "@/utils/helpers";
 import { getPostData } from "@/utils/postService";
 import Image from "next/image";
 
@@ -88,7 +88,12 @@ function PostImage({ content: { image } }: { content: PostContentImage }) {
 
   return (
     <div className="my-4 pb-40 sm:pb-80 md:pb-120 lg:pb-160 relative overflow-hidden">
-      <Image fill src={imageSrc} alt={image.caption} style={{ objectFit: "cover" }} />
+      <Image
+        fill
+        src={imageSrc}
+        alt={image.caption}
+        style={{ objectFit: "cover" }}
+      />
     </div>
   );
 }
