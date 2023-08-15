@@ -9,11 +9,11 @@ import {
 } from "@/common/interfaces";
 import { logger } from "@/common/logger";
 import { Banner } from "@/components/banner";
-import Image from "next/image";
 import { EmptyBanner } from "@/components/empty";
 import { ErrorBanner } from "@/components/error";
 import { buildImageUri } from '@/utils/helpers';
 import { getPostData } from "@/utils/postService";
+import Image from "next/image";
 
 export const revalidate = 0;
 

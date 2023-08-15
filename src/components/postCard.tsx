@@ -1,7 +1,7 @@
 import { PostInfo } from "@/common/interfaces";
-import Link from "next/link";
-import Image from "next/image";
 import { buildImageUri } from '@/utils/helpers';
+import Image from "next/image";
+import Link from "next/link";
 
 export function PostCard({ post }: { post: PostInfo }) {
   return (
