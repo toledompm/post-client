@@ -11,7 +11,6 @@ import { logger } from "@/common/logger";
 import { Banner } from "@/components/banner";
 import { EmptyBanner } from "@/components/empty";
 import { ErrorBanner } from "@/components/error";
-import { buildImageUri } from "@/utils/helpers";
 import { getPostData } from "@/utils/postService";
 import Image from "next/image";
 
@@ -84,13 +83,11 @@ function PostHeading({ heading }: { heading: PostContentHeading }) {
 }
 
 function PostImage({ content: { image } }: { content: PostContentImage }) {
-  const imageSrc = buildImageUri(image.url);
-
   return (
     <div className="my-4 pb-40 sm:pb-80 md:pb-120 lg:pb-160 relative overflow-hidden">
       <Image
         fill
-        src={imageSrc}
+        src={image.url}
         alt={image.caption}
         style={{ objectFit: "cover" }}
       />

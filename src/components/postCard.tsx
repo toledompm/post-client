@@ -1,5 +1,4 @@
 import { PostInfo } from "@/common/interfaces";
-import { buildImageUri } from "@/utils/helpers";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -29,11 +28,9 @@ function TagBubble({ tag }: { tag: string }) {
 }
 
 function PostCardImage({ url, alt }: { url: string; alt: string }) {
-  const imageSrc = buildImageUri(url);
-
   return (
     <div className="rounded-xl mb-2 pb-40 sm:pb-80 md:pb-120 lg:pb-160 relative overflow-hidden">
-      <Image fill src={imageSrc} alt={alt} style={{ objectFit: "cover" }} />
+      <Image fill src={url} alt={alt} style={{ objectFit: "cover" }} />
     </div>
   );
 }
