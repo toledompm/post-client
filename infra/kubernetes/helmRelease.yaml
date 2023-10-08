@@ -23,7 +23,7 @@ spec:
     image:
       repository: "ghcr.io/toledompm/post-client"
       pullPolicy: IfNotPresent
-      tag: "0.6.1"
+      tag: "0.6.2"
 
     service:
       type: ClusterIP
