@@ -22,6 +22,6 @@ RUN npm install --omit=dev
 
 COPY --from=build /app/.next ./.next
 COPY --from=build /app/next.config.js ./
-COPY --from=build /_next ./_next
+COPY --from=build /app/_next ./_next
 
 ENTRYPOINT [ "npm", "run", "start" ]
