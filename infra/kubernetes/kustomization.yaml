@@ -3,3 +3,4 @@ kind: Kustomization
 namespace: post-client
 resources:
 - helmRelease.yaml
+- helmRepository.yaml
