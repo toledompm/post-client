@@ -21,8 +21,6 @@ spec:
       pullPolicy: IfNotPresent
       tag: "0.6.1"
 
-    secretEnv: post-client-env
-
     service:
       type: ClusterIP
       port: 3030
