@@ -16,6 +16,10 @@ spec:
     remediation:
       remediateLastFailure: true
   values:
+    nodeSelector:
+      kubernetes.io/arch: amd64
+      kubernetes.io/os: linux
+
     image:
       repository: "ghcr.io/toledompm/post-client"
       pullPolicy: IfNotPresent
@@ -35,6 +39,10 @@ spec:
           paths:
             - path: /
               pathType: Prefix
+
+    env:
+      - name: POST_API_URL
+        value: "blog-api.toledompm.xyz"
 
     resources:
       limits:
