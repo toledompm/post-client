@@ -42,7 +42,7 @@ spec:
 
     env:
       - name: POST_API_URL
-        value: "blog-api.toledompm.xyz"
+        value: "https://blog-api.toledompm.xyz"
 
     resources:
       limits:
