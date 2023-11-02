@@ -84,12 +84,12 @@ function PostHeading({ heading }: { heading: PostContentHeading }) {
 
 function PostImage({ content: { image } }: { content: PostContentImage }) {
   return (
-    <div className="my-4 pb-40 sm:pb-80 md:pb-120 lg:pb-160 relative overflow-hidden">
+    <div className="my-4 pb-40 sm:pb-80 lg:pb-[500px] relative overflow-hidden bg-white">
       <Image
         fill
         src={image.url}
         alt={image.caption}
-        style={{ objectFit: "cover" }}
+        style={{ objectFit: "contain" }}
       />
     </div>
   );
