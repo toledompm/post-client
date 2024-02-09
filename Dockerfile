@@ -1,8 +1,8 @@
-FROM node:18.16-alpine AS base
+FROM node:20.11-alpine AS base
 
 WORKDIR /app
 
-RUN npm install -g npm@9.8.1
+RUN npm install -g npm@10.4.0
 
 FROM base AS build
 

@@ -1,11 +1,14 @@
-import {
+import type {
   PostContent,
   PostContentHeading,
   PostContentImage,
   PostContentParagraph,
+} from "@/common/interfaces";
+import {
   isPostContentHeading,
   isPostContentImage,
   isPostContentParagraph,
+  isPostContentParagraphLink,
 } from "@/common/interfaces";
 import { logger } from "@/common/logger";
 import { Banner } from "@/components/banner";
@@ -66,10 +69,27 @@ function PostContent({ content }: { content: PostContent }) {
   }
 }
 
-function PostParagraph({ paragraph }: { paragraph: PostContentParagraph }) {
+function PostParagraph({
+  paragraph: { paragraph },
+}: {
+  paragraph: PostContentParagraph;
+}) {
   return (
     <div className="mb-4">
-      <p>{paragraph.paragraph}</p>
+      <p>
+        {paragraph.map((content, index) => {
+          if (isPostContentParagraphLink(content)) {
+            return (
+              <ParagraphLink
+                key={index}
+                url={content.url}
+                text={content.text}
+              />
+            );
+          }
+          return content;
+        })}
+      </p>
     </div>
   );
 }
@@ -92,5 +112,18 @@ function PostImage({ content: { image } }: { content: PostContentImage }) {
         style={{ objectFit: "contain" }}
       />
     </div>
+  );
+}
+
+function ParagraphLink({ url, text }: { url: string; text: string }) {
+  return (
+    <a
+      href={url}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="font-bold text-gray-300 underline underline-offset-2"
+    >
+      {text}
+    </a>
   );
 }

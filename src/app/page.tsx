@@ -1,4 +1,4 @@
-import { PostInfo } from "@/common/interfaces";
+import type { PostInfo } from "@/common/interfaces";
 import { logger } from "@/common/logger";
 import { Banner } from "@/components/banner";
 import { EmptyBanner } from "@/components/empty";
