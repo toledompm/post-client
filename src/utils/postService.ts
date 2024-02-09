@@ -1,4 +1,4 @@
-import { PostContent, PostInfo } from "@/common/interfaces";
+import type { PostContent, PostInfo } from "@/common/interfaces";
 import { config } from "@/config/config";
 
 const baseURL = config().api.url;

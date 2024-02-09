@@ -1,4 +1,4 @@
-import { PostInfo } from "@/common/interfaces";
+import type { PostInfo } from "@/common/interfaces";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -13,7 +13,12 @@ export function PostCard({ post }: { post: PostInfo }) {
           <p>{post.tweet}</p>
         </div>
         <div className="rounded-xl mb-2 overflow-hidden relative pb-40 sm:pb-80 bg-white">
-          <Image fill src={post.imageUrl} alt={post.imageAlt} style={{ objectFit: "contain" }} />
+          <Image
+            fill
+            src={post.imageUrl}
+            alt={post.imageAlt}
+            style={{ objectFit: "contain" }}
+          />
         </div>
         <div className="flex">{post.tags.map((tag) => TagBubble({ tag }))}</div>
       </div>
