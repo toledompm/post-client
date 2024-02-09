@@ -38,7 +38,7 @@ spec:
 
     env:
       - name: POST_API_URL
-        value: "https://blog-api-staging.toledompm.xyz"
+        value: "https://blog-api.toledompm.xyz"
 
     resources:
       limits:
