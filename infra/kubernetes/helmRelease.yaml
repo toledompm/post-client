@@ -19,7 +19,7 @@ spec:
     image:
       repository: "ghcr.io/toledompm/post-client"
       pullPolicy: IfNotPresent
-      tag: "0.9.1"
+      tag: "0.10.0"
 
     service:
       type: ClusterIP
@@ -38,7 +38,7 @@ spec:
 
     env:
       - name: POST_API_URL
-        value: "https://blog-api.toledompm.xyz"
+        value: "https://blog-api-staging.toledompm.xyz"
 
     resources:
       limits:
