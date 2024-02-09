@@ -8,6 +8,7 @@ import {
   isPostContentHeading,
   isPostContentImage,
   isPostContentParagraph,
+  isPostContentParagraphLink,
 } from "@/common/interfaces";
 import { logger } from "@/common/logger";
 import { Banner } from "@/components/banner";
@@ -77,7 +78,7 @@ function PostParagraph({
     <div className="mb-4">
       <p>
         {paragraph.map((content, index) => {
-          if (isLink(content)) {
+          if (isPostContentParagraphLink(content)) {
             return (
               <ParagraphLink
                 key={index}
@@ -127,8 +128,4 @@ function ParagraphLink({ url, text }: { url: string; text: string }) {
   );
 }
 
-function isLink(
-  content: string | { url: string; text: string },
-): content is { url: string; text: string } {
-  return Object.keys(content).includes("url");
-}
+

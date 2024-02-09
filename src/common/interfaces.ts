@@ -15,7 +15,12 @@ export type PostContentHeading = {
 };
 
 export type PostContentParagraph = {
-  paragraph: (string | { url: string; text: string })[];
+  paragraph: (string | PostContentParagraphLink)[];
+};
+
+export type PostContentParagraphLink = {
+  url: string;
+  text: string;
 };
 
 export type PostContentImage = {
@@ -46,4 +51,10 @@ export function isPostContentImage(
   content: PostContent,
 ): content is PostContentImage {
   return Object.keys(content).includes("image");
+}
+
+export function isPostContentParagraphLink(
+  content: string | PostContentParagraphLink,
+): content is PostContentParagraphLink {
+  return Object.keys(content).includes("url");
 }
